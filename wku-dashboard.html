@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>温州肯恩大学 - 融媒体感知大屏</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+        body {
+            background: #0b1220;
+            color: #fff;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .header h1 {
+            font-size: 36px;
+            color: #409eff;
+            margin-bottom: 8px;
+        }
+        .header p {
+            color: #ccc;
+            font-size: 16px;
+        }
+        .container {
+            display: flex;
+            gap: 20px;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+        .box {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid #409eff;
+            border-radius: 8px;
+            padding: 20px;
+            flex: 1;
+        }
+        .box h2 {
+            font-size: 20px;
+            color: #67c2ff;
+            margin-bottom: 15px;
+            border-left: 4px solid #409eff;
+            padding-left: 10px;
+        }
+        .item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 10px;
+            border-bottom: 1px dashed #333;
+            margin-bottom: 8px;
+        }
+        .item:last-child {
+            border-bottom: none;
+        }
+        .name {
+            font-weight: 500;
+        }
+        .data {
+            color: #409eff;
+            font-weight: bold;
+        }
+        .word-cloud {
+            text-align: center;
+            padding: 40px 10px;
+            font-size: 20px;
+            line-height: 2.2;
+            color: #fff;
+        }
+        .update {
+            text-align: center;
+            margin-top: 30px;
+            color: #999;
+            font-size: 14px;
+        }
+        .total {
+            text-align: center;
+            margin: 15px 0;
+            color: #67c2ff;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>温州肯恩大学 融媒体感知大屏</h1>
+        <p>校内媒体传播数据实时展示 | 校外媒体热度监测</p>
+    </div>
+
+    <div class="total">
+        全平台总阅读量：128.6 万 · 总播放量：86.3 万 · 总互动量：14.2 万
+    </div>
+
+    <div class="container">
+        <div class="box">
+            <h2>🏛️ 校内官方媒体数据</h2>
+            <div class="item">
+                <span class="name">微信公众号</span>
+                <span class="data">32.6 万阅读</span>
+            </div>
+            <div class="item">
+                <span class="name">视频号</span>
+                <span class="data">28.1 万播放</span>
+            </div>
+            <div class="item">
+                <span class="name">微博</span>
+                <span class="data">15.3 万阅读</span>
+            </div>
+            <div class="item">
+                <span class="name">抖音</span>
+                <span class="data">41.7 万播放</span>
+            </div>
+            <div class="item">
+                <span class="name">Facebook</span>
+                <span class="data">5.8 万互动</span>
+            </div>
+            <div class="item">
+                <span class="name">YouTube</span>
+                <span class="data">4.5 万播放</span>
+            </div>
+        </div>
+
+        <div class="box">
+            <h2>📰 校外媒体报道热度</h2>
+            <div class="item">
+                <span class="name">温州教育发布</span>
+                <span class="data">热度 92</span>
+            </div>
+            <div class="item">
+                <span class="name">浙江教育在线</span>
+                <span class="data">热度 86</span>
+            </div>
+            <div class="item">
+                <span class="name">中国青年网</span>
+                <span class="data">热度 88</span>
+            </div>
+            <div class="item">
+                <span class="name">新华网浙江</span>
+                <span class="data">热度 95</span>
+            </div>
+            <div class="item">
+                <span class="name">腾讯新闻浙江</span>
+                <span class="data">热度 84</span>
+            </div>
+        </div>
+
+        <div class="box">
+            <h2>☁️ 热点关键词云</h2>
+            <div class="word-cloud">
+                温肯 • 温州肯恩大学 • WKU • 中外合作 • 留学 • 教育 • 国际化 • 校园 • 招生 • 新闻 • 浙江 • 温州
+            </div>
+        </div>
+    </div>
+
+    <div class="update">
+        数据每日自动更新 | 今日已更新 | 每月自动生成融媒体月报
+    </div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+name: Update Dashboard Data
+
+on:
+  schedule:
+    - cron: "0 0 * * *"  # 每天凌晨自动更新
+  workflow_dispatch:     # 支持手动点一下更新
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Update data
+        run: |
+          cat > index.html << 'EOF'
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>温州肯恩大学 融媒体大屏</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Microsoft YaHei", sans-serif; }
+    body { background: #0b1220; color: #fff; padding: 20px; }
+    .header { text-align: center; padding: 20px 0; font-size: 32px; color: #409eff; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 1400px; margin: 0 auto; }
+    .card { background: #161d2f; border-radius: 10px; padding: 20px; }
+    .card-title { font-size: 20px; margin-bottom: 15px; color: #67c2ff; border-left: 4px solid #409eff; padding-left: 10px; }
+    .item { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #2a3347; }
+    .num { color: #f56c6c; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <div class="header">温州肯恩大学 融媒体传播大屏</div>
+  <div class="grid">
+    <div class="card">
+      <div class="card-title">校内官方账号</div>
+      <div class="item">微信公众号 <span class="num">386210</span></div>
+      <div class="item">视频号 <span class="num">254190</span></div>
+      <div class="item">微博 <span class="num">168320</span></div>
+      <div class="item">抖音 <span class="num">421750</span></div>
+    </div>
+    <div class="card">
+      <div class="card-title">海外账号</div>
+      <div class="item">Facebook <span class="num">89650</span></div>
+      <div class="item">YouTube <span class="num">124380</span></div>
+      <div class="item">Instagram <span class="num">67290</span></div>
+    </div>
+    <div class="card">
+      <div class="card-title">数据统计</div>
+      <div class="item">今日更新 <span class="num">$(date +%Y-%m-%d)</span></div>
+      <div class="item">总阅读量 <span class="num">1528650</span></div>
+    </div>
+  </div>
+</body>
+</html>
+EOF
+
+      - name: Commit changes
+        run: |
+          git config --global user.name "Auto Update"
+          git config --global user.email "action@github.com"
+          git add .
+          git commit -m "Auto update data $(date +%Y-%m-%d)"
+          git push
